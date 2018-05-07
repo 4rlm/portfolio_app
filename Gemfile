@@ -6,7 +6,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #   "https://github.com/#{repo_name}.git"
 # end
 
-
+### KEEP RUBY VERSION AT BOTTOM.
+ruby "2.5.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -53,6 +54,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'pry', '~> 0.11.3'
 end
 
 group :test do
@@ -66,8 +69,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
 gem "rack-timeout", require:"rack/timeout/base"
 
-### KEEP RUBY VERSION AT BOTTOM.
-ruby "2.5.1"
+
+### Extra Gems ###
+gem 'font-awesome-sass', '~> 5.0.6'
+# Use jquery as the JavaScript library
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap', '~> 4.0.0'
+gem 'autoprefixer-rails'
+gem 'bootstrap-select-rails', '~> 1.12', '>= 1.12.4'
