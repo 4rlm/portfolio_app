@@ -8,7 +8,6 @@ module AlgoMath
     fib[-1]
   end
 
-
   def fibonacci_recurs(n)
     return 0 if n == 0
     return 1 if n <= 2
@@ -17,7 +16,6 @@ module AlgoMath
 
 
   ############ Factorials Below ############
-
 
   def factorial_iter(n)
     (1..n).reduce(1, :*)
@@ -32,6 +30,18 @@ module AlgoMath
   def factorial_recurs(n)
     return 1 if n < 2
     n * factorial_recurs(n - 1)
+  end
+
+
+  ####### Subset W/ Factorial Below #######
+
+  # subset_count(0, 5)  # => 0
+  # subset_count(6, 3)  # => 20
+  # AlgosService.new.find_subsets(6, 3)
+  def find_subsets(n, r)
+    fn = factorial_iter(n)
+    fr = factorial_iter(r)
+    ncr = fn / ( fr * factorial_iter((n - r)) )
   end
 
 
@@ -84,6 +94,26 @@ module AlgoMath
   end
 
 
+
+  ############ Shuffle Below ############
+
+  # AlgosService.new.shuffle
+  def shuffle(args={})
+    sample_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+    arr = args.fetch(:arr, sample_array)
+
+    input = arr.clone
+    output = []
+    len = input.length
+
+    while len > 0
+      r = Random.rand(0..len-1)
+      output << input[r]
+      input.delete_at(r)
+      len = input.length
+    end
+    output
+  end
 
 
 

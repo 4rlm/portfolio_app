@@ -11,14 +11,16 @@ def each(array)
   end
 end
 
-def find(array)
-  i = 0
-  while i < array.length
-    return array[i] if yield(array[i])
-    i += 1
 
-  end
-end
+# def find(array)
+#   i = 0
+#   while i < array.length
+#     return array[i] if yield(array[i])
+#     i += 1
+#
+#   end
+# end
+
 #find(numbers) { |number| number > 1 }
 #this is an example of what could be called for this to run outside of the testing environment
 

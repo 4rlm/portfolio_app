@@ -6,9 +6,10 @@ class AlgosService
   # extend ActiveSupport::Concern
   include AlgoMath
   include AlgoBench
+  include AlgoEnum
   # attr_reader :file_name, :file_path
 
-  ####################### I. SMALL ALGOS ####################
+  ####################### I. AlgoMath ####################
   ########## ALGOS BELOW ARE LINKED FROM AlgoMath ##########
   ####### They are smaller and can be run like below. #######
   # They can also be run through AlgoBench fro Benchmarking #
@@ -23,12 +24,34 @@ class AlgosService
   # AlgosService.new.global_linear_search(args)
   # AlgosService.new.iterative_binary_search(args)
 
+  ####################### II. AlgoEnum ####################
+  ########## ALGOS BELOW ARE LINKED FROM AlgoEnum ##########
+  ####### They are smaller and can be run like below. #######
+  # They can also be run through AlgoBench fro Benchmarking #
+  ###########################################################
+
+
+  # AlgosService.new.run_enum
+  def run_enum
+    arr = (0..10).to_a
+    binding.pry
+
+    find(arr) { |el| el > 1 }
+    binding.pry
+
+    find(arr) { |el| el < 1 }
+    binding.pry
+
+
+    # find(arr) { |el| el > 1 }
+  end
 
 
 
 
 
-  ####################### II. BIG ALGOS ####################
+
+  ####################### III. BIG ALGOS ####################
   ##### ALGOS BELOW ARE LARGER FILES, SO START FROM HERE ####
   ###########################################################
 
@@ -79,6 +102,13 @@ class AlgosService
   def start_ssn_tool(args={})
     ssn_hashes = SsnTool.start_ssn_tool(args)
     structs = ssn_hashes.map { |hsh| OpenStruct.new(hsh) }
+  end
+
+
+  # AlgosService.new.run_house
+  def run_house(args={})
+    run_house = House.run_house(args)
+    # structs = ssn_hashes.map { |hsh| OpenStruct.new(hsh) }
   end
 
 
