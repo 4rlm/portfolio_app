@@ -4,9 +4,33 @@
 # AlgosService.new.run_benchmark(8, 500)
 class AlgosService
   # extend ActiveSupport::Concern
-  include AlgoStore
+  include AlgoMath
   include AlgoBench
   # attr_reader :file_name, :file_path
+
+  ####################### I. SMALL ALGOS ####################
+  ########## ALGOS BELOW ARE LINKED FROM AlgoMath ##########
+  ####### They are smaller and can be run like below. #######
+  # They can also be run through AlgoBench fro Benchmarking #
+  ###########################################################
+
+  # AlgosService.new.fibonacci_iter(10)
+  # AlgosService.new.fibonacci_recurs(n)
+  # AlgosService.new.factorial_iter(n)
+  # AlgosService.new.factorial_recurs(n)
+
+  # AlgosService.new.linear_search(args)
+  # AlgosService.new.global_linear_search(args)
+  # AlgosService.new.iterative_binary_search(args)
+
+
+
+
+
+
+  ####################### II. BIG ALGOS ####################
+  ##### ALGOS BELOW ARE LARGER FILES, SO START FROM HERE ####
+  ###########################################################
 
   # AlgosService.new.run_anagrams({string: 'lemon apple madam'})
   def run_anagrams(args = {})
@@ -48,6 +72,13 @@ class AlgosService
   def start_word_search(args={})
     score_hsh = WordSearch.start_word_search(args)
     struct = OpenStruct.new(score_hsh)
+  end
+
+
+  # AlgosService.new.start_ssn_tool
+  def start_ssn_tool(args={})
+    ssn_hashes = SsnTool.start_ssn_tool(args)
+    structs = ssn_hashes.map { |hsh| OpenStruct.new(hsh) }
   end
 
 
