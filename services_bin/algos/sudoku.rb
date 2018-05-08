@@ -1,24 +1,51 @@
 module Sudoku
 
+  def self.refresh_values
+    @starting_dash_count = 0
+    @ending_dash_count = 0
+    @starting_board = nil
+    @final_board = []
+    @solved = nil
+    @start_time = Time.now
+  end
+
   # AlgosService.new.run_sudoku
   def self.run_sudoku
+    sudoku_scores = []
     puzzle_strings = File.readlines('services_bin/algos/sudoku_puzzles.txt')
+    total_rounds = puzzle_strings.count
 
-    puzzle_strings.each_with_index do |puzzle_string, i|
-      puts "\n\Starting Puzzle #{i+1} of 15.\nMay The Force Be With YOU!"
-      solve(puzzle_string)
+    totals = puzzle_strings.enum_for(:each_with_index).map do |puzzle,i|
+      refresh_values
+      starting_board = format_puzzle_string(puzzle)
+      starting_dash_count = get_dash_count_totals(starting_board)
+      start_puzzle(puzzle)
+
+      unless @solved == nil
+        sudoku_scores << { round: i+1,
+                rounds: total_rounds,
+                solved: @solved,
+                starting_board: starting_board,
+                final_board: @final_board,
+                duration: Time.now - @start_time,
+                starting_dash_count: starting_dash_count,
+                ending_dash_count: ending_dash_count = get_dash_count_totals(@final_board)
+              }
+
+      end
     end
-
+    return sudoku_scores
   end
 
   def self.format_puzzle_string(puzzle_string)
     rows = puzzle_string.chomp.chars.each_slice(9).to_a
   end
 
-  def self.solve(puzzle_string)
+  def self.start_puzzle(puzzle_string)
     rows = format_puzzle_string(puzzle_string)
     data_hashes = find_dash_options(make_data_hash(rows))
     updated_rows = fill_dashes(data_hashes, rows)
+    @final_board = updated_rows if !@final_board.any?
     looper(puzzle_string, updated_rows)
   end
 
@@ -152,8 +179,8 @@ module Sudoku
   def self.solved?(board)
     puts "\n\n#{"="*25}\nThe board was solved!\n\n"
     puts pretty_board(board)
-    puts "#{"="*25}\n\n"
-    return
+    @solved = true
+    return @solved
   end
 
 

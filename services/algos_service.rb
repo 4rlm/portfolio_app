@@ -34,15 +34,8 @@ class AlgosService
   # AlgosService.new.run_enum
   def run_enum
     arr = (0..10).to_a
-    binding.pry
-
     find(arr) { |el| el > 1 }
-    binding.pry
-
     find(arr) { |el| el < 1 }
-    binding.pry
-
-
     # find(arr) { |el| el > 1 }
   end
 
@@ -57,16 +50,14 @@ class AlgosService
 
   # AlgosService.new.run_sudoku
   def run_sudoku
-    sudoku_hsh = Sudoku.run_sudoku
-    binding.pry
-    # struct = OpenStruct.new(sudoku_hsh)
+    sudoku_scores = Sudoku.run_sudoku
+    structs = sudoku_scores.map { |hsh| OpenStruct.new(hsh) }
   end
 
 
   # AlgosService.new.run_anagrams({string: 'lemon apple madam'})
   def run_anagrams(args = {})
     anagrams_hsh = Anagram.run_anagrams(args)
-    binding.pry
     struct = OpenStruct.new(anagrams_hsh)
   end
 
