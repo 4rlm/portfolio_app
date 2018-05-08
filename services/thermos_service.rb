@@ -1,39 +1,38 @@
-module House
-
-
+class ThermosService
   # my_house = House.new(75,60,80)
   # my_house.ac_on
   # my_house.toggle_heater
 
 
-  # my_house = AlgosService.new.run_house
-  # my_house.heater_on
-  def self.run_house(args={})
+  # my_house = ThermosService.new
+  # my_house.ac_on
+  # my_house.toggle_heater
+
+  def initialize(args={})
     binding.pry
     @temp_now = args.fetch(:temp_now, 75)
     @min_temp = args.fetch(:min_temp, 60)
     @max_temp = args.fetch(:max_temp, 80)
     @heater_on = false
     @ac_on = false
-    ac_on
   end
 
 
-  def self.heater_on
+  def heater_on
     @heater_on = true
     @ac_on = false
     puts "Heater On"
     auto_temp
   end
 
-  def self.ac_on
+  def ac_on
     @ac_on = true
     @heater_off = false
     puts "AC On"
     auto_temp
   end
 
-  def self.toggle_heater
+  def toggle_heater
     if @heater_on == false
       @heater_on = true
       @ac_on = false
@@ -57,7 +56,7 @@ module House
     end
   end
 
-  def self.update_temp!
+  def update_temp!
     puts "Current Temp: #{@temp_now}."
     if @heater_on == true
       @temp_now = @temp_now + 1
@@ -69,7 +68,7 @@ module House
     puts "New Temp: #{@temp_now}."
   end
 
-  def self.auto_temp
+  def auto_temp
     if @min_temp == @temp_now
       puts "Minimum Temperature Reached!"
       toggle_heater
