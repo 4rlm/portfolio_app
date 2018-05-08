@@ -55,6 +55,14 @@ class AlgosService
   ##### ALGOS BELOW ARE LARGER FILES, SO START FROM HERE ####
   ###########################################################
 
+  # AlgosService.new.run_sudoku
+  def run_sudoku
+    sudoku_hsh = Sudoku.run_sudoku
+    binding.pry
+    # struct = OpenStruct.new(sudoku_hsh)
+  end
+
+
   # AlgosService.new.run_anagrams({string: 'lemon apple madam'})
   def run_anagrams(args = {})
     anagrams_hsh = Anagram.run_anagrams(args)
