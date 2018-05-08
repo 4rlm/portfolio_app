@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Thermos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thermos.each do |thermo| %>
+      <tr>
+        <td><%= link_to 'Show', thermo %></td>
+        <td><%= link_to 'Edit', edit_thermo_path(thermo) %></td>
+        <td><%= link_to 'Destroy', thermo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thermo', new_thermo_path %>

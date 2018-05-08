@@ -1,0 +1,17 @@
+<%= form_with(model: algo, local: true) do |form| %>
+  <% if algo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(algo.errors.count, "error") %> prohibited this algo from being saved:</h2>
+
+      <ul>
+      <% algo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
