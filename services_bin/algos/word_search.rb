@@ -1,6 +1,6 @@
 module WordSearch
 
-  # AlgosService.new.start_word_search
+  # AlgoService.new.start_word_search
   def self.start_word_search(args = {})
     @puzzle = args.fetch(:puzzle, make_puzzle)
     @word = args.fetch(:word, 'wolves')

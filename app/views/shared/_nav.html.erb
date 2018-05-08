@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+
+      <button type="button" class="view-in-mobile hamburger navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <%= icon('fas', 'bars') %>
+      </button>
+
+      <%= link_to(icon('fas', 'database', 'adam booth'), root_path, class: "navbar-brand")%>
+
+    </div>
+
+    <div class="collapse navbar-collapse collapse-in-mobile" id="myNavbar">
+
+      <ul class="nav navbar-nav">
+
+        <li><%= link_to(icon('fas', 'building', 'algos'), algos_path, class: "nav-link")%></li>
+        <li><%= link_to(icon('fas', 'users', 'thermos'), thermos_path, class: "nav-link")%></li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>

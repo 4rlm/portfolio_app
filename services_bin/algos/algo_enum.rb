@@ -1,7 +1,7 @@
 module AlgoEnum
 
   # arr = (0..10).to_a
-  # AlgosService.new.each(arr)
+  # AlgoService.new.each(arr)
   def each(array)
     i = 0
     while i < array.length
@@ -14,7 +14,7 @@ module AlgoEnum
 
   #find(numbers) { |number| number > 1 }
   # arr = (0..10).to_a
-  # AlgosService.new.find(arr) { |el| el > 1 }
+  # AlgoService.new.find(arr) { |el| el > 1 }
   def find(array)
     i = 0
     while i < array.length

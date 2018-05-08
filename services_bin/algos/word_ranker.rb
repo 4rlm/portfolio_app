@@ -1,6 +1,6 @@
 module WordRanker
 
-  # AlgosService.new.run_word_ranker
+  # AlgoService.new.run_word_ranker
   def self.run_word_ranker(args={})
     word_string = args.fetch(:word_string, sample_word_string)
     string_count_hash = count_strings(word_string)

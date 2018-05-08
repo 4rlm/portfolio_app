@@ -1,6 +1,6 @@
 module PigLatin
 
-  # AlgosService.new.run_pig_latin
+  # AlgoService.new.run_pig_latin
   def self.run_pig_latin(args={})
     sample_string = 'rabbits love tricks'
     string = args.fetch(:string, sample_string)

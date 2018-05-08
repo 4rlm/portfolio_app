@@ -37,7 +37,7 @@ module AlgoMath
 
   # subset_count(0, 5)  # => 0
   # subset_count(6, 3)  # => 20
-  # AlgosService.new.find_subsets(6, 3)
+  # AlgoService.new.find_subsets(6, 3)
   def find_subsets(n, r)
     fn = factorial_iter(n)
     fr = factorial_iter(r)
@@ -47,7 +47,7 @@ module AlgoMath
 
   ############ Searches Below ############
 
-  # AlgosService.new.linear_search
+  # AlgoService.new.linear_search
   def linear_search(args={})
     arr = args.fetch(:arr, sample_arr)
     target = args.fetch(:target, sample_target(arr))
@@ -60,7 +60,7 @@ module AlgoMath
   end
 
 
-  # AlgosService.new.global_linear_search
+  # AlgoService.new.global_linear_search
   def global_linear_search(args={})
     arr = args.fetch(:arr, sample_arr)
     target = args.fetch(:target, sample_target(arr))
@@ -77,7 +77,7 @@ module AlgoMath
   end
 
 
-  # AlgosService.new.iterative_binary_search
+  # AlgoService.new.iterative_binary_search
   def iterative_binary_search(args={})
     arr = args.fetch(:arr, sample_arr)
     target = args.fetch(:target, sample_target(arr))
@@ -97,7 +97,7 @@ module AlgoMath
 
   ############ Shuffle Below ############
 
-  # AlgosService.new.shuffle
+  # AlgoService.new.shuffle
   def shuffle(args={})
     sample_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
     arr = args.fetch(:arr, sample_array)

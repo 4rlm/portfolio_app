@@ -1,6 +1,6 @@
 module Palindrome
 
-  # AlgosService.new.run_palindrome({string: 'lemon apple madam cinema restful fluster'})
+  # AlgoService.new.run_palindrome({string: 'lemon apple madam cinema restful fluster'})
   def self.run_palindrome(args = {})
     sample_string = "lemon apple madam cinema restful fluster"
     string = args.fetch(:string, sample_string)

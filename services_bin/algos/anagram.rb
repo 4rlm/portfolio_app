@@ -1,6 +1,6 @@
 module Anagram
 
-  # AlgosService.new.run_anagrams({string: 'lemon apple madam cinema restful fluster'})
+  # AlgoService.new.run_anagrams({string: 'lemon apple madam cinema restful fluster'})
   def self.run_anagrams(args = {})
     sample_string = "lemon apple madam cinema restful fluster"
     string = args.fetch(:string, sample_string)

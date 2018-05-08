@@ -1,10 +1,10 @@
-class ThermosService
+class ThermoService
   # my_house = House.new(75,60,80)
   # my_house.ac_on
   # my_house.toggle_heater
 
 
-  # my_house = ThermosService.new
+  # my_house = ThermoService.new
   # my_house.ac_on
   # my_house.toggle_heater
 

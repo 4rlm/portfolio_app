@@ -9,7 +9,7 @@ module AlgoBench
   end
 
 
-  # bench = AlgosService.new.bench_fibonacci_iter(5)
+  # bench = AlgoService.new.bench_fibonacci_iter(5)
   def run_benchmark
     bench_rounds = @bench_rounds || 500
     binding.pry
@@ -18,7 +18,7 @@ module AlgoBench
   end
 
 
-  # benches = AlgosService.new.run_all_benchmarks(5, 20)
+  # benches = AlgoService.new.run_all_benchmarks(5, 20)
   def run_all_benchmarks(input, rounds)
     @bench_rounds = rounds
     benches = [ bench_fibonacci_iter(input),
@@ -29,7 +29,7 @@ module AlgoBench
   end
 
 
-  # bench = AlgosService.new.bench_fibonacci_iter(5)
+  # bench = AlgoService.new.bench_fibonacci_iter(5)
   def bench_fibonacci_iter(n)
     about_hsh = {algo: 'fibonacci_iter', input: n}
     bench_hsh = run_benchmark { fibonacci_iter(n) }

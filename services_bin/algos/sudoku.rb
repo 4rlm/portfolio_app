@@ -9,7 +9,7 @@ module Sudoku
     @start_time = Time.now
   end
 
-  # AlgosService.new.run_sudoku
+  # AlgoService.new.run_sudoku
   def self.run_sudoku
     sudoku_scores = []
     puzzle_strings = File.readlines('services_bin/algos/sudoku_puzzles.txt')

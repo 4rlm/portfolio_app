@@ -1,5 +1,8 @@
 class ThermosController < ApplicationController
   before_action :set_thermo, only: [:show, :edit, :update, :destroy]
+  # before_action :set_thermo_service, only: [:core_comp_cleaner_btn] # Service Ex.
+  before_action :set_thermo_service, only: [:core_comp_cleaner_btn]
+
 
   # GET /thermos
   # GET /thermos.json
@@ -61,7 +64,21 @@ class ThermosController < ApplicationController
     end
   end
 
+
+  # SERVICE EX
+  # def core_comp_cleaner_btn
+  #   @service.core_comp_cleaner_btn
+  #   flash[:notice] = "Core(Comparison) cleaned successfully."
+  #   redirect_to cores_path
+  # end
+
   private
+
+
+  def set_thermo_service
+    @service = ThermoService.new
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_thermo
       @thermo = Thermo.find(params[:id])

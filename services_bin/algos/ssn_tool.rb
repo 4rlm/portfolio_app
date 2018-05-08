@@ -1,6 +1,6 @@
 module SsnTool
 
-  # AlgosService.new.start_ssn_tool
+  # AlgoService.new.start_ssn_tool
   def self.start_ssn_tool(args={})
     ssn_strings = args.fetch(:ssns, generate_ssn_num_strings)
     @hashes = ssn_strings.map do |ssn_string|

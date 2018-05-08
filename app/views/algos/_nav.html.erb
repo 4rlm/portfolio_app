@@ -1,0 +1,22 @@
+<div class="col-md-12 text-center">
+  <h5 class="section-header">Navs</h5>
+</div>
+
+
+<!-- Followed & Hidden Acts -->
+<table class="table">
+  <thead>
+    <tr>
+      <th class="text-center">Category</th>
+      <th colspan='2' class='text-center'>Followed</th>
+      <th colspan='2' class='text-center'>Hidden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= link_to "Run Sudoku", run_sudoku_path, class: 'btn btn-lg btn-warning' %>
+
+    <%#= render 'users/act_totals', user: @user %>
+    <%#= render 'users/cont_totals', user: @user %>
+    <%#= render 'users/web_totals', user: @user %>
+  </tbody>
+</table>

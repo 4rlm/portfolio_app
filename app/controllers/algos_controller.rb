@@ -1,5 +1,8 @@
 class AlgosController < ApplicationController
   before_action :set_algo, only: [:show, :edit, :update, :destroy]
+  # before_action :set_algo_service, only: [:core_comp_cleaner_btn] # Service Ex.
+  before_action :set_algo_service, only: [:run_sudoku]
+
 
   # GET /algos
   # GET /algos.json
@@ -61,7 +64,28 @@ class AlgosController < ApplicationController
     end
   end
 
+
+  # SERVICE EX
+  # def core_comp_cleaner_btn
+  #   @service.core_comp_cleaner_btn
+  #   flash[:notice] = "Core(Comparison) cleaned successfully."
+  #   redirect_to cores_path
+  # end
+
+  def run_sudoku
+    binding.pry
+    @service.run_sudoku
+    flash[:notice] = "Sudoko Started!"
+    redirect_to algos_path
+  end
+
   private
+
+  def set_algo_service
+    @service = AlgoService.new
+  end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_algo
       @algo = Algo.find(params[:id])
