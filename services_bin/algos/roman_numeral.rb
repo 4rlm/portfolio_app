@@ -1,6 +1,6 @@
-module RomanNumerals
+module RomanNumeral
 
-  def self.convert_to_roman(arabic_num)
+  def self.run_roman_numerals(arabic_num)
     converted_hsh = convert_to_modern(arabic_num)
   end
 

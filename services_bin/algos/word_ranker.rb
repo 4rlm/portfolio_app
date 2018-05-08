@@ -1,7 +1,7 @@
-module WordsInFile
+module WordRanker
 
-  # AlgosService.new.words_in_file
-  def self.find_words_in_string(args={})
+  # AlgosService.new.run_word_ranker
+  def self.run_word_ranker(args={})
     word_string = args.fetch(:word_string, sample_word_string)
     string_count_hash = count_strings(word_string)
     word_rankings = sort_counted_strings(string_count_hash)
@@ -9,13 +9,15 @@ module WordsInFile
     result_hsh = {word_string: word_string, word_rankings: word_rankings }
   end
 
+
   def self.sort_counted_strings(string_count_hash)
     word_rankings = string_count_hash.sort_by {|_key, value| value}
     word_rankings.reverse!
   end
 
   def self.count_strings(word_string)
-    array = word_string.split()
+    # array = word_string.split()
+    array = word_string.split(/\W+/)
     string_count_hash = array.group_by{|e| e}.map{|k, v| [k, v.length]}.to_h
   end
 
