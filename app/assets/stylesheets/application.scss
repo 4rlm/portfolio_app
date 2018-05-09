@@ -545,76 +545,121 @@
 
 
 
- .hidden-sts {
-   background: red;
-   color: white;
- }
+// ### ALGO STYLES START HERE ###
+
+.algo-service {
+  // background: yellow;
+  // width: 100%;
+  margin: 1px;
+  padding: 2px;
+}
+
+.algo-inputs-col {
+  // background: red;
+  margin: 0;
+  padding: 2px;
+}
+
+.algo-results-col {
+  // background: pink;
+  margin: 0;
+  padding: 2px;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.algo-inputs-row {
+  // background-color: #434855;
+  margin: 1px;
+  padding: 3px;
+  min-height: 1000px;
+  border: 2px solid #2c303a;
+}
+
+.algo-results-row {
+  // background-color: #434855;
+  margin: 1px;
+  padding: 3px;
+  min-height: 1000px;
+  border: 2px solid #2c303a;
+}
+
+.algo-form-wrap {
+  // background: red;
+  width: 100%;
+}
+
+.algo-form {
+  // background: red;
+  width: 100%;
+  // height: 600px;
+}
+
+.algo-btn {
+  // background: red;
+  width: 100%;
+  height: 70px;
+}
+
+.algo-result-bar {
+  background-color: #2c303a;
+  padding: 3px;
+  padding-left: 10px;
+}
+
+.algo-hsh-row {
+  // background-color: #434855;
+  background-color: #2c303a;
+  padding: 5px;
+  margin: 10px 0 0 0;
+  border: 1px solid #434855;
+  // border-bottom: 2px solid red;
+}
 
 
- .visible-sts {
-   background: blue;
-   color: white;
- }
+.algo-hsh-col {
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid gray;
+  // background: purple;
+}
 
+.algo-key-val-row {
+  margin: 0px;
+  padding: 2px;
+  // border: 1px solid #434855;
+  // border: 1px solid #2d3139;
+  border: 1px solid #22242b;
+  // border: 1px solid gray;
+  // background: purple;
+}
 
- // For Fav-Hide Sts
+.algo-key-col {
+  margin: 0px;
+  // padding: 5px;
+  // border: 1px solid gray;
+  // background: black;
+}
 
+.algo-val-col {
+  margin: 0px;
+  // padding: 5px;
+  // border: 1px solid gray;
+  background-color: #262930;
+}
 
+// .algo-key-col p {
+//   font-size: 16px;
+//   padding: 2px;
+// }
+//
+// .algo-val-col p {
+// }
 
- // TESTING!!!  MULTI-SELECT - STARTS
-
-
- // label, select, form {
- //     display: block !important;
- //     // vertical-align: middle !important;
- //     // vertical-align: text-top;
- // }
-
- // .navie {
- //   width: 100%;
- //   text-align: center;
- //   display:inline-block;
- //   vertical-align: top;
- //   float: none;
- //   // background-color: white;
- //   background-image:linear-gradient(#ffffff, #e8f8fc);
- //   border: solid 1px #137fa0;
- //   border-top: none;
- //   box-shadow: 5px 5px 5px gray;
- //   border-radius: 0 0 5px 5px;
- //   // position: fixed;
- // }
-
- // label {
- //     line-height:25px;
- // }
-
- // selectpicker customizing starts
- // select.selectpicker.select-block {
- //   color: blue !important;
- //   background-color: red;
- //   font-style: italic;
- // }
-
- // .form-control {
- //   // color: blue !important;
- //   // background-color: orange;
- //   // font-style: italic;
- //   width: 100% !important;
- //   padding: 0 !important;
- //   margin: 0 !important;
- //   font-size: 100%;
- //   text-align: center;
- // }
-
-
- // .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
- //   width: 100%;
- //   li a {
- //     font-size: 100%;
- //   }
- // }
- //
- // .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
- //   margin-right: 0;
- // }
+.algo-result-text h6 {
+  padding: 2px;
+  font-size: 80%;
+  line-height: 110%;
+}

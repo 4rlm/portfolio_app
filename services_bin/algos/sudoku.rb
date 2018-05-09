@@ -25,8 +25,8 @@ module Sudoku
         sudoku_scores << { round: i+1,
                 rounds: total_rounds,
                 solved: @solved,
-                starting_board: starting_board,
-                final_board: @final_board,
+                starting_board: remove_quotes(starting_board),
+                final_board: remove_quotes(@final_board),
                 duration: Time.now - @start_time,
                 starting_dash_count: starting_dash_count,
                 ending_dash_count: ending_dash_count = get_dash_count_totals(@final_board)
@@ -34,7 +34,18 @@ module Sudoku
 
       end
     end
-    return sudoku_scores
+    return sudoku_scores.reverse
+  end
+
+  def self.remove_quotes(rows)
+    rows.map! do |row|
+      row.map { |el| number_or_nil(el) }
+    end
+  end
+
+  def self.number_or_nil(string)
+    num = string.to_i
+    num.to_s == string ? num : string
   end
 
   def self.format_puzzle_string(puzzle_string)

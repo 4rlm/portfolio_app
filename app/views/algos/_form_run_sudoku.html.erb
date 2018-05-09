@@ -1,9 +1,12 @@
-<div class="runSudoku">
+<div class="runSudoku algo-form-wrap">
 
-  <%= form_with url: run_sudoku_algos_path do |f| %>
+  <%= form_with(url: run_sudoku_algos_path, class: :'algo-form') do |f| %>
     <%= f.hidden_field :form_id, value: 'runSudoku' %>
 
-    <%= f.submit "Run Sudoku", class: "btn btn-primary" %>
+    <%= button_tag type: 'submit', class: "btn btn-primary algo-btn", id: "register-button" do %>
+        <%= icon('fas', 'play-circle', 'Run Sudoku') %>
+    <% end %>
+
   <% end %>
 
 </div>

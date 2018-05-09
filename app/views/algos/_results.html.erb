@@ -1,0 +1,30 @@
+<div id="algoServiceDiv" >
+
+  <% results = @service.results %>
+  <% results.each_with_index do |result_hsh, num| %>
+
+    <div class="row algo-hsh-row">
+      <h6 class="algo-result-bar">Result <%= num+1 %> <span> at <%= Time.now.strftime("%H:%M")  %></span> </h6>
+
+      <div class="col-md-12 algo-hsh-col">
+
+        <% result_hsh.each do |key, value| %>
+
+          <div class="row algo-key-val-row">
+            <div class="col-md-2 algo-key-col">
+              <h6 class="algo-result-text"><%= format_key(key) %></h6>
+            </div>
+
+            <div class="col-md-10 algo-val-col">
+              <h6 class="algo-result-text"><%= value %></h6>
+            </div>
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

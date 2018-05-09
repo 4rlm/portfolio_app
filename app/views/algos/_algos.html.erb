@@ -19,38 +19,25 @@
       <h6 class=""> <span class="font-weight-bold">TIP</span>: The Websites Module primarily focuses on URLs, their status, and relation to their associated data, such as their Accounts and Contacts.  URL data is listed on left and associated Accounts listed on right. Click blue 'Staff' button in left URL Section to view Scraped Contacts; if they exist. Search Websites via <span style="font-size: 10px;"><%= icon('fas', 'search') %></span>  icon in top right corner.  It's important to note that each Website URL can have multiple Accounts and each Account can have multiple Website URLs.  Using 'Follow' and 'Hide' is designed to help determine if you have already viewed that same data in another section.</h6>
     </div>
   </div>
+
 </div>
 
 
-<div class="row">
-  <div class="col-md-3 text-center">
-    <h5 class="section-header">Options & Buttons Here</h5>
-    <div class="row">
-      <%= link_to(icon('fas', 'tachometer-alt', 'Run Sudoku'), run_sudoku_algos_path, class: "btn btn-primary") %>
-    </div>
 
-      <%= render 'algos/form_run_sudoku' %>
+<div class="row algo-service">
+
+  <div class="col-md-3 text-center algo-inputs-col">
+    <h5 class="section-header">Algo Input</h5>
+    <div class="row algo-inputs-row">
+        <%= render 'algos/form_run_sudoku' %>
+    </div>
   </div>
 
-  <div class="col-md-9">
-
-    <div class="row">
-      <h5 class="section-header">Service Results Here</h5>
-      <%= render 'algos/service', service: @service %>
+  <div class="col-md-9 algo-results-col">
+    <h5 class="section-header">Algo Output</h5>
+    <div class="row algo-results-row">
+      <%= render 'algos/results', service: @service %>
     </div>
-
   </div>
-</div>
 
-
-
-
-
-<div class="panel outer-panel">
-  <h6>OUTER PANEL</h6>
-</div>
-
-
-<div class="row">
-  <!-- BOTTOM FILLER FOR NOW -->
 </div>
