@@ -1,0 +1,12 @@
+<div class="runRomanNumerals algo-form-wrap">
+
+  <%= form_with(url: run_roman_numerals_algos_path, class: :'algo-form') do |f| %>
+    <%= f.hidden_field :form_id, value: 'runRomanNumerals' %>
+
+    <%= button_tag type: 'submit', class: "btn btn-primary algo-btn", id: "register-button" do %>
+        <%= icon('fas', 'play-circle', 'Run Roman Numerals') %>
+    <% end %>
+
+  <% end %>
+
+</div>

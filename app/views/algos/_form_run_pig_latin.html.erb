@@ -1,0 +1,12 @@
+<div class="runPigLatin algo-form-wrap">
+
+  <%= form_with(url: run_pig_latin_algos_path, class: :'algo-form') do |f| %>
+    <%= f.hidden_field :form_id, value: 'runPigLatin' %>
+
+    <%= button_tag type: 'submit', class: "btn btn-primary algo-btn", id: "register-button" do %>
+        <%= icon('fas', 'play-circle', 'Run Pig Latin') %>
+    <% end %>
+
+  <% end %>
+
+</div>

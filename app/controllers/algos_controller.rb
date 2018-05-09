@@ -63,23 +63,73 @@ class AlgosController < ApplicationController
     end
   end
 
-
-  # SERVICE EX
-  # def core_comp_cleaner_btn
-  #   @service.core_comp_cleaner_btn
-  #   flash[:notice] = "Core(Comparison) cleaned successfully."
-  #   redirect_to cores_path
-  # end
-
-
+  ##### SERVICE RELATED METHODS BELOW #####
+  
   def run_sudoku
     @service.run_sudoku
     flash[:notice] = "Sudoko Started!"
-
     respond_to do |format|
       format.js { render :update_service }
     end
   end
+
+  def run_anagrams
+    @service.run_anagrams
+    flash[:notice] = "Sudoko Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+  def run_roman_numerals
+    @service.run_roman_numerals
+    flash[:notice] = "Sudoko Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+  def run_word_ranker
+    @service.run_word_ranker
+    flash[:notice] = "Sudoko Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+  def run_pig_latin
+    @service.run_pig_latin
+    flash[:notice] = "Sudoko Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+  def run_palindrome
+    @service.run_palindrome
+    flash[:notice] = "Sudoko Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+  def run_word_search
+    @service.run_word_search
+    flash[:notice] = "Sudoko Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+  def run_ssn_tool
+    @service.run_ssn_tool
+    flash[:notice] = "Sudoko Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+  ##### SERVICE RELATED METHODS ABOVE #####
 
   private
 

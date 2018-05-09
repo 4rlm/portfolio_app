@@ -1,0 +1,12 @@
+<div class="runPalindrome algo-form-wrap">
+
+  <%= form_with(url: run_palindrome_algos_path, class: :'algo-form') do |f| %>
+    <%= f.hidden_field :form_id, value: 'runPalindrome' %>
+
+    <%= button_tag type: 'submit', class: "btn btn-primary algo-btn", id: "register-button" do %>
+        <%= icon('fas', 'play-circle', 'Run Palindrome') %>
+    <% end %>
+
+  <% end %>
+
+</div>

@@ -60,66 +60,77 @@ class AlgoService
   ##### ALGOS BELOW ARE LARGER FILES, SO START FROM HERE ####
   ###########################################################
 
+  ## IMPORTANT - CONVERTS EVERY ALGO TO FRONT-END VIEWS ##
+  def convert_results(results)
+    results.map { |hsh| @results << hsh }
+    return @results
+  end
+
   # AlgoService.new.run_sudoku
   def run_sudoku
-    sudoku_scores = Sudoku.run_sudoku
-    # sudoku_scores.map { |hsh| @results << OpenStruct.new(hsh) }
-    sudoku_scores.map { |hsh| @results << hsh }
-    return @results
+    convert_results(Sudoku.run_sudoku)
   end
 
 
   # AlgoService.new.run_anagrams({string: 'lemon apple madam'})
   def run_anagrams(args = {})
-    anagrams_hsh = Anagram.run_anagrams(args)
-    struct = OpenStruct.new(anagrams_hsh)
+    convert_results(Anagram.run_anagrams(args))
+    # anagrams_hsh = Anagram.run_anagrams(args)
+    # struct = OpenStruct.new(anagrams_hsh)
   end
 
 
   # AlgoService.new.run_roman_numerals(675)
   def run_roman_numerals(arabic_num)
-    converted_hsh = RomanNumeral.run_roman_numerals(arabic_num)
-    struct = OpenStruct.new(converted_hsh)
+    convert_results(RomanNumeral.run_roman_numerals(arabic_num))
+    # converted_hsh = RomanNumeral.run_roman_numerals(arabic_num)
+    # struct = OpenStruct.new(converted_hsh)
   end
 
 
   # AlgoService.new.run_word_ranker
   def run_word_ranker(args={})
-    result_hsh = WordRanker.run_word_ranker(args)
-    struct = OpenStruct.new(result_hsh)
+    convert_results(WordRanker.run_word_ranker(args))
+    # result_hsh = WordRanker.run_word_ranker(args)
+    # struct = OpenStruct.new(result_hsh)
   end
 
 
   # AlgoService.new.run_pig_latin({string: 'zebras are striped'})
   def run_pig_latin(args={})
-    pig_latin_hsh = PigLatin.run_pig_latin(args)
-    struct = OpenStruct.new(pig_latin_hsh)
+    convert_results(PigLatin.run_pig_latin(args))
+    # pig_latin_hsh = PigLatin.run_pig_latin(args)
+    # struct = OpenStruct.new(pig_latin_hsh)
   end
 
 
   # AlgoService.new.run_palindrome({string: 'lemon apple madam'})
   def run_palindrome(args={})
-    palindrome_hsh = Palindrome.run_palindrome(args)
-    struct = OpenStruct.new(palindrome_hsh)
+    convert_results(Palindrome.run_palindrome(args))
+    # palindrome_hsh = Palindrome.run_palindrome(args)
+    # struct = OpenStruct.new(palindrome_hsh)
   end
 
 
-  # AlgoService.new.start_word_search
-  def start_word_search(args={})
-    score_hsh = WordSearch.start_word_search(args)
-    struct = OpenStruct.new(score_hsh)
+  # AlgoService.new.run_word_search
+  def run_word_search(args={})
+    convert_results(WordSearch.run_word_search(args))
+    # score_hsh = WordSearch.run_word_search(args)
+    # struct = OpenStruct.new(score_hsh)
   end
 
 
-  # AlgoService.new.start_ssn_tool
-  def start_ssn_tool(args={})
-    ssn_hashes = SsnTool.start_ssn_tool(args)
-    structs = ssn_hashes.map { |hsh| OpenStruct.new(hsh) }
+  # AlgoService.new.run_ssn_tool
+  def run_ssn_tool(args={})
+    convert_results(SsnTool.run_ssn_tool(args))
+    # ssn_hashes = SsnTool.run_ssn_tool(args)
+    # structs = ssn_hashes.map { |hsh| OpenStruct.new(hsh) }
   end
 
 
   # AlgoService.new.run_house
   def run_house(args={})
+    convert_results(HERE)
     run_house = House.run_house(args)
     # structs = ssn_hashes.map { |hsh| OpenStruct.new(hsh) }
   end
