@@ -1,8 +1,7 @@
 class AlgosController < ApplicationController
-  before_action :set_algo, only: [:show, :edit, :update, :destroy]
-  # before_action :set_algo_service, only: [:core_comp_cleaner_btn] # Service Ex.
-  before_action :set_algo_service, only: [:run_sudoku]
-
+  before_action :set_algo, only: [:show, :edit, :update, :destroy ]
+  # before_action :set_algo_service, only: [:run_sudoku]
+  before_action :set_algo_service
 
   # GET /algos
   # GET /algos.json
@@ -72,17 +71,22 @@ class AlgosController < ApplicationController
   #   redirect_to cores_path
   # end
 
+
   def run_sudoku
-    binding.pry
     @service.run_sudoku
     flash[:notice] = "Sudoko Started!"
-    redirect_to algos_path
+
+    respond_to do |format|
+      format.js { render :update_service }
+    end
   end
 
   private
 
+
   def set_algo_service
     @service = AlgoService.new
+    @data = nil
   end
 
 

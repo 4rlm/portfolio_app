@@ -21,3 +21,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+
+  function algosHeaderTipModal() {
+    var el = $('#algosHeaderTipModalWrap');
+    console.log(el.is(':visible'));
+
+    if (el.is(':visible')) {
+      el.hide();
+    } else {
+      el.show();
+    }
+  }

@@ -1,0 +1,27 @@
+<div id="algoServiceDiv" >
+
+  <% results = @service.results %>
+  <% results.each_with_index do |result_hsh, num| %>
+    <h6 style="background: green; padding: 2px; margin: 10px 0 0 0;">Result <%= num+1 %> <span> at <%= Time.now.strftime("%H:%M")  %></span> </h6>
+
+    <div class="row" style="border-bottom: 2px solid red;">
+      <div class="col-md-12" style="border: 1px solid gray;">
+
+        <% result_hsh.each do |key, value| %>
+          <div class="row">
+            <div class="col-md-2">
+              <%= key %>
+            </div>
+
+            <div class="col-md-10" style="border: 1px solid gray;">
+              <%= value %>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

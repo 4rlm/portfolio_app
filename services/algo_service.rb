@@ -7,6 +7,18 @@ class AlgoService
   include AlgoMath
   include AlgoBench
   include AlgoEnum
+
+  attr_reader :results
+  def initialize
+    @results = []
+  end
+
+  # attr_reader :data
+  # def initialize(data)
+  #   @data = data
+  # end
+
+
   # attr_reader :file_name, :file_path
 
   ####################### I. AlgoMath ####################
@@ -50,9 +62,10 @@ class AlgoService
 
   # AlgoService.new.run_sudoku
   def run_sudoku
-    binding.pry
     sudoku_scores = Sudoku.run_sudoku
-    structs = sudoku_scores.map { |hsh| OpenStruct.new(hsh) }
+    # sudoku_scores.map { |hsh| @results << OpenStruct.new(hsh) }
+    sudoku_scores.map { |hsh| @results << hsh }
+    return @results
   end
 
 

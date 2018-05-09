@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  # root 'home#index'
   get 'home/index'
   root to: 'home#index'
 
-
-  get 'run_sudoku' => 'algos#run_sudoku'
+  resources :algos do
+    collection do
+      match 'run_sudoku' => 'algos#run_sudoku', via: [:get, :post], as: :run_sudoku
+      match 'servicer' => 'algos#servicer', via: [:get, :post], as: :servicer
+    end
+  end
 
   resources :thermos
-  resources :algos
 end
 
 

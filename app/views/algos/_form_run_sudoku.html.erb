@@ -1,0 +1,9 @@
+<div class="runSudoku">
+
+  <%= form_with url: run_sudoku_algos_path do |f| %>
+    <%= f.hidden_field :form_id, value: 'runSudoku' %>
+
+    <%= f.submit "Run Sudoku", class: "btn btn-primary" %>
+  <% end %>
+
+</div>
