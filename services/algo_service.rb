@@ -62,37 +62,35 @@ class AlgoService
 
   ## IMPORTANT - CONVERTS EVERY ALGO TO FRONT-END VIEWS ##
   def convert_results(results)
-    results.map { |hsh| @results << hsh }
+
+    if results.kind_of?(Array)
+      results.map { |hsh| @results << hsh }
+    elsif results.kind_of?(Hash)
+      @results << results
+    end
+
     return @results
   end
+
 
   # AlgoService.new.run_sudoku
   def run_sudoku
     convert_results(Sudoku.run_sudoku)
   end
 
-
   # AlgoService.new.run_anagrams({string: 'lemon apple madam'})
   def run_anagrams(args = {})
     convert_results(Anagram.run_anagrams(args))
-    # anagrams_hsh = Anagram.run_anagrams(args)
-    # struct = OpenStruct.new(anagrams_hsh)
   end
-
 
   # AlgoService.new.run_roman_numerals(675)
-  def run_roman_numerals(arabic_num)
-    convert_results(RomanNumeral.run_roman_numerals(arabic_num))
-    # converted_hsh = RomanNumeral.run_roman_numerals(arabic_num)
-    # struct = OpenStruct.new(converted_hsh)
+  def run_roman_numerals(args = {})
+    convert_results(RomanNumeral.run_roman_numerals(args))
   end
-
 
   # AlgoService.new.run_word_ranker
   def run_word_ranker(args={})
     convert_results(WordRanker.run_word_ranker(args))
-    # result_hsh = WordRanker.run_word_ranker(args)
-    # struct = OpenStruct.new(result_hsh)
   end
 
 

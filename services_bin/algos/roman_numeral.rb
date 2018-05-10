@@ -1,7 +1,8 @@
 module RomanNumeral
 
-  def self.run_roman_numerals(arabic_num)
-    converted_hsh = convert_to_modern(arabic_num)
+  def self.run_roman_numerals(args = {})
+    arabic_nums = args.fetch(:arabic_nums, sample_arabic_nums)
+    arabic_nums.map { |num| convert_to_modern(num) }
   end
 
 
@@ -54,6 +55,10 @@ module RomanNumeral
                       modern_roman_num: modern_roman_num,
                       same: same || true
                     }
+  end
+
+  def self.sample_arabic_nums
+    numbers = (0..20).map { rand(999..9999) }
   end
 
 

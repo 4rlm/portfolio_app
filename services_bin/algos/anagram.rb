@@ -2,10 +2,14 @@ module Anagram
 
   # AlgoService.new.run_anagrams({string: 'lemon apple madam cinema restful fluster'})
   def self.run_anagrams(args = {})
-    sample_string = "lemon apple madam cinema restful fluster"
-    string = args.fetch(:string, sample_string)
-    anagrams = find_anagrams(string)
-    anagrams_hsh = { anagrams: anagrams, string: string }
+    string_block = args.fetch(:string, sample_string_block)
+    strings = Helpers.parse_string_block(string_block)
+
+    anagrams = strings.map do |string|
+      { input_string: string, anagrams: find_anagrams(string) }
+    end
+
+    anagrams << {original_text: string_block}
   end
 
   # array = ['madam', 'restful', 'fluster']
@@ -33,6 +37,10 @@ module Anagram
 
   def self.format_string(string)
     formatted_string = string.downcase.chars.sort.join('')
+  end
+
+  def self.sample_string_block
+    "Can a rat eat tar? How big is the arc of that car door? Could you pass me the book just below your elbow? Does your state have a coffee taste test? That cider is so sour I cried. It's not good to study in a dusty room. Would you like to see that thing at night? My chin is almost an inch long. Grab something cool to brag about. Don't act like a cat in public, please. It was our Daisy, robed like a princess, but bored all day long. Let's save that vase for later. Can an angel glean upon us? I seriously got stressed from resisting those desserts. Do you ever fluster, or are you always restful?  Do you prefer the smell of lemon or melon?"
   end
 
 
