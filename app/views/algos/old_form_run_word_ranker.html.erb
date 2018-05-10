@@ -1,0 +1,12 @@
+<div class="runWordRanker algo-form-wrap">
+
+  <%= form_with(url: run_word_ranker_algos_path, class: :'algo-form') do |f| %>
+    <%= f.hidden_field :form_id, value: 'runWordRanker' %>
+
+    <%= button_tag type: 'submit', class: "btn btn-primary algo-btn", id: "register-button" do %>
+        <%= icon('fas', 'play-circle', 'Run Word Ranker') %>
+    <% end %>
+
+  <% end %>
+
+</div>

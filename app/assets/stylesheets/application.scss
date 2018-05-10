@@ -136,13 +136,6 @@
  }
 
 
-
- // flash[:notice] => alert-success
- // flash[:alert] => alert-warning
- // flash.now[:alert] => alert-danger
-
-
-
  .flash_wrap {
    font-size: 18px;
    // box-shadow: 1px 1px 1px #888888;
@@ -163,11 +156,6 @@
  }
 
 
-
-
-
-
-
  /* Header Tip Modal Content */
  .section-panel {
    background-color: #434856;
@@ -175,7 +163,6 @@
    padding: 10px;
    margin: -1px;
    margin-bottom: 30px;
-   // width: 100%;
  }
 
  .header-tip-modals {
@@ -196,7 +183,6 @@
    line-height: normal;
    margin: 0px;
    padding: 2px;
-   // border: 2px solid #4e5465;
    border-radius: 0px;
    width: 100px;
    font-size: 12px;
@@ -209,17 +195,11 @@
    font-weight: bolder;
    border-bottom: 3px solid #00ff6c;
 
-   // margin-bottom: 2px;
-   // background: #00ff6c;
-   // color: #1d3c4e;
-   // font-weight: bolder;
  }
 
  .profile-spacing {
    margin-top: 30px;
  }
-
-
 
 
 
@@ -235,31 +215,6 @@
    font-size: 12px;
    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
  }
-
-
- // .vertical-text {
- //   /* Safari */
- //   -webkit-transform: rotate(-90deg);
- //   /* Firefox */
- //   -moz-transform: rotate(-90deg);
- //   /* IE */
- //   -ms-transform: rotate(-90deg);
- //   /* Opera */
- //   -o-transform: rotate(-90deg);
- //   /* Internet Explorer */
- //   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
- // }
-
-
- // .vertical-text-act-web {
- //   background: yellow;
- //   color: black;
- //   padding: 2px;
- //   margin: 2px;
- // }
-
-
-
 
 
 
@@ -310,17 +265,6 @@
    padding:3px;
  }
 
- // iframe {
- //   width: 100%;
- // 	height: auto;
- //   display: block;
- // }
-
- // MODAL BODY STARTS
- // .modal {
- //   background: blue;
- //   // width: 1500px;
- // }
 
  .modal-dialog{
    margin-left: 20px;
@@ -366,20 +310,6 @@
    margin-left: 3px;
  }
 
- // .fav-btn {
- //   background: #106cd6; // bs-primary: #106cd6
- //   // opacity: .4;
- // }
- //
- // .hide-btn {
- //   background: #c62638; // bs-danger: #c62638
- // }
-
- // .fa-span {
- //   padding: 0;
- //   margin: 0;
- //   font-size: 14px;
- // }
 
  .btn-sm {
    text-align: center;
@@ -445,7 +375,6 @@
 
  .details td {
    background: #434855;
-   // background: yellow;
    padding: 2px;
  }
 
@@ -457,11 +386,6 @@
    padding-bottom: 10px;
  }
 
- // .fa-btn-xs {
- //   text-align: center;
- //   margin: 0;
- //   padding: 0;
- // }
 
  .active-sts {
    background-color: #434856 !important;
@@ -473,9 +397,6 @@
 
  // SPECIAL VIEW CSS - STARTS
  .outer-panel {
-   // background-color: #2c303a;
-   // border: 1px solid #434857;
-   // border-radius: 5px;
    margin: 0px;
    padding: 5px;
  }
@@ -483,7 +404,6 @@
 
  .outer-list-row {
    background-color: #434856;
-   // background-color: yellow;
    border: 1px solid #434857;
    border-radius: 0px;
    margin-bottom: 10px;
@@ -491,12 +411,10 @@
  }
 
  .association-parent{
-   // background-color: yellow;
    border: 1px solid #4e5465;
    border-radius: 0px;
    margin: 0px;
    padding-top: 10px;
-   // width: 95%;
  }
 
  div.association-parent p {
@@ -506,21 +424,15 @@
 
  .association-row {
    background-color: #434856;
-   // background-color: red;
    border: 1px solid #4e5465;
    border-radius: 0px;
    margin-top: 5px;
-   // margin-bottom: 5px;
    padding-top: 10px;
-   // width: 95%;
-   // width: 90%;
  }
  // SPECIAL VIEW CSS - ENDS
 
 
  table.table {
-   // border-collapse: separate;
-   // border-spacing: 0 5px;
    padding: 5px;
    margin: 5px;
    border: none;
@@ -533,7 +445,6 @@
 
  tbody td {
    background-color: #2c303a;
-   // border: 0;
  }
 
  table.table {
@@ -592,24 +503,36 @@
 
 
 .algo-text-form-wrap {
-  // background: yellow;
   width: 100%;
 
 }
 
 .algo-text-form {
   width: 100%;
-  // margin: 10px;
-  padding: 10px;
-  // border: 1px solid red;
-  background: pink;
+  padding: 5px;
+  border: none;
+  border-top: 1px solid gray;
 
 }
 
 .algo-text-btn {
   width: 100%;
-  // height: 70px;
-  // background-color: #434855;
+  min-height: 40px;
+}
+
+.text-area {
+  font-size: 13px;
+}
+
+.text-field {
+  height: 30px;
+  font-size: 13px;
+}
+
+.form-label {
+  color: white;
+  font-size: 115%;
+
 }
 
 
@@ -618,8 +541,7 @@
 
 .algo-btn {
   width: 100%;
-  // height: 70px;
-  // background-color: #434855;
+  min-height: 40px;
 }
 
 .algo-result-bar {
@@ -663,12 +585,6 @@
   background-color: #262930;
 }
 
-// .algo-key-col p {
-// }
-//
-// .algo-val-col p {
-// }
-
 .algo-result-text h6 {
   padding: 2px;
   font-size: 80%;
@@ -679,7 +595,6 @@
 // ### ACCORDIAN STYLE STARTS HERE ###
 
 .acc-panel-grp {
-  // background: red;
   min-height: 1000px;
   margin: 0;
   padding: 0;
@@ -687,43 +602,43 @@
 }
 
 .acc-panel-div {
-  // background: yellow;
-  // margin: 2px;
-  // padding: 1px;
   width: 100%;
-  // border: 1px solid #f7f7f7;
   border: 1px solid #434855;
   padding-top: 1px;
-  // border-top: none;
   border-radius: 3px;
+  margin: 0;
 }
 
 .acc-panel-heading {
-  // background: #f7f7f7;
   background: #434855;
-  // margin: 2px;
   padding: 2px;
   width: 100%;
 }
 
 .acc-panel-title {
   background: #434855;
-  // margin: 2px;
   padding: 5px;
   width: 100%;
 }
 
-.acc-panel-collapse div {
-  // background: #434855;
-  // margin: 2px;
+.acc-panel-collapse {
   padding: 5px;
   width: 100%;
-  min-height: 300px;
 }
 
 .acc-panel-body div {
-  // background: #434855;
-  // margin: 2px;
+  min-height: 300px;
   padding: 5px;
+  margin-bottom: 10px;
   width: 100%;
+  height: 100%;
+}
+
+.algo-form-render-wrap {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  bottom: 0;
+
 }

@@ -10,6 +10,8 @@ class AlgoService
 
 
   ## IMPORTANT - CONVERTS EVERY ALGO TO FRONT-END VIEWS ##
+
+  # attr_accessor :original_text, :title
   attr_reader :results
   def initialize
     @results = []
@@ -89,6 +91,15 @@ class AlgoService
   ##### ALGOS BELOW ARE LARGER FILES, SO START FROM HERE ####
   ###########################################################
 
+  # AlgoService.new.run_word_ranker
+  def run_word_ranker(args={})
+    results = WordRanker.run_word_ranker(args)
+    convert_results(results)
+    # convert_results(WordRanker.run_word_ranker(args))
+  end
+
+
+
   # AlgoService.new.run_sudoku
   def run_sudoku
     convert_results(Sudoku.run_sudoku)
@@ -102,13 +113,8 @@ class AlgoService
   # AlgoService.new.run_roman_numerals(675)
   def run_roman_numerals(args = {})
     convert_results(RomanNumeral.run_roman_numerals(args))
+    binding.pry
   end
-
-  # AlgoService.new.run_word_ranker
-  def run_word_ranker(args={})
-    convert_results(WordRanker.run_word_ranker(args))
-  end
-
 
   # AlgoService.new.run_pig_latin({string: 'zebras are striped'})
   def run_pig_latin(args={})

@@ -1,9 +1,22 @@
-<div class="runWordRanker algo-form-wrap">
+<div class="runWordRanker algo-text-form-wrap">
 
-  <%= form_with(url: run_word_ranker_algos_path, class: :'algo-form') do |f| %>
+  <%= form_with(url: run_word_ranker_algos_path, class: :'algo-text-form') do |f| %>
     <%= f.hidden_field :form_id, value: 'runWordRanker' %>
 
-    <%= button_tag type: 'submit', class: "btn btn-primary algo-btn", id: "register-button" do %>
+    <div class="form-group">
+      <%#= f.label :original_text, class: "control-label form-label" %>
+      <%= f.text_area :original_text, placeholder: "Paste a couple paragraphs...", size: "30x10", class: "form-control text-area" %>
+    </div>
+
+
+    <div class="form-group">
+      <%#= f.label :title, class: "control-label form-label" %>
+      <%= f.text_field :title, placeholder: "Enter a topic or title...", class: "form-control text-field" %>
+    </div>
+
+
+
+    <%= button_tag type: 'submit', class: "btn btn-primary algo-text-btn", id: "register-button" do %>
         <%= icon('fas', 'play-circle', 'Run Word Ranker') %>
     <% end %>
 

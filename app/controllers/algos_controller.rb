@@ -92,7 +92,7 @@ class AlgosController < ApplicationController
   end
 
   def run_roman_numerals
-    @service.run_roman_numerals
+    @service.run_roman_numerals(args)
     flash[:notice] = "Sudoko Started!"
     respond_to do |format|
       format.js { render :update_service }
@@ -100,7 +100,10 @@ class AlgosController < ApplicationController
   end
 
   def run_word_ranker
-    @service.run_word_ranker
+    # attr_accessor :original_text, :title
+    args = {original_text: params[:original_text], title: params[:title]}
+    @service.run_word_ranker(args)
+    
     flash[:notice] = "Sudoko Started!"
     respond_to do |format|
       format.js { render :update_service }

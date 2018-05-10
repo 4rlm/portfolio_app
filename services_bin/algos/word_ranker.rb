@@ -7,7 +7,7 @@ module WordRanker
     string_block = args.fetch(:original_text, nil)
     title = args.fetch(:title, nil)
 
-    if string_block.nil?
+    if !string_block.present?
       wiki_hsh = generate_string_block
       string_block = wiki_hsh.fetch(:original_text)
       title = wiki_hsh.fetch(:title)
