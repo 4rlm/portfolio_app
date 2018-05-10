@@ -2,8 +2,8 @@ module WordSearch
 
   # AlgoService.new.run_word_search
   def self.run_word_search(args = {})
-    @puzzle = args.fetch(:puzzle, make_puzzle)
-    @word = args.fetch(:word, 'wolves')
+    @word = args.fetch(:word, generate_word)
+    @puzzle = args.fetch(:puzzle, generate_puzzle)
     @word_chars = @word.chars
     @found = []
     @first_letter = @word[0]
@@ -17,7 +17,7 @@ module WordSearch
     remaining = @word_chars - @found
     found = @found & @word_chars
     remaining.any? ? win = false : win = true
-    score_hsh = {string: @word, found: found, remaining: remaining, win: win}
+    score_hsh = {string: @word, found: found, remaining: remaining, win: win, puzzle: @puzzle}
   end
 
   def self.find_coordinates
@@ -66,17 +66,51 @@ module WordSearch
     end
   end
 
-  def self.make_puzzle
-    puzzle = [
-      ["a", "w", "o", "l", "v", "e", "s"],
-      ["s", "o", "a", "w", "a", "h", "p"],
-      ["i", "t", "c", "k", "e", "t", "n"],
-      ["o", "t", "s", "d", "h", "o", "h"],
-      ["s", "e", "h", "g", "s", "t", "a"],
-      ["u", "r", "p", "i", "w", "e", "u"],
-      ["z", "s", "b", "n", "u", "i", "r"]
-    ]
+  # def self.make_puzzle
+  #   binding.pry
+  #   puzzles = []
+  #
+  #   puzzles << { word: 'wolves',
+  #          puzzle: [["a", "w", "o", "l", "v", "e", "s"],
+  #                   ["s", "o", "a", "w", "a", "h", "p"],
+  #                   ["i", "t", "c", "k", "e", "t", "n"],
+  #                   ["o", "t", "s", "d", "h", "o", "h"],
+  #                   ["s", "e", "h", "g", "s", "t", "a"],
+  #                   ["u", "r", "p", "i", "w", "e", "u"],
+  #                   ["z", "s", "b", "n", "u", "i", "r"]] }
+  #
+  #   puzzles << { word: 'wolves',
+  #          puzzle: [["a", "w", "o", "l", "v", "e", "s"],
+  #                   ["s", "o", "a", "w", "a", "h", "p"],
+  #                   ["i", "t", "c", "k", "e", "t", "n"],
+  #                   ["o", "t", "s", "d", "h", "o", "h"],
+  #                   ["s", "e", "h", "g", "s", "t", "a"],
+  #                   ["u", "r", "p", "i", "w", "e", "u"],
+  #                   ["z", "s", "b", "n", "u", "i", "r"]] }
+  #
+  #   puzzle = puzzles.sample
+  # end
+
+
+  def self.generate_puzzle
+    word = @word
+    word = word.chars
+    while word.length < 7
+      alph = ('a'..'z').to_a.sample
+      word.length.odd? ? pos = 0 : pos = -1
+      word.insert(pos,alph)
+    end
+
+    puzzle = (0..7).map { ('a'..'z').to_a.shuffle[0,7] }
+    n = rand(0..7)
+    puzzle[n] = word
+    @puzzle = puzzle
   end
 
+
+  def self.generate_word
+    words = %w(texas gahee adam love happy austin)
+    word = words.shuffle.sample
+  end
 
 end
