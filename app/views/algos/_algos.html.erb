@@ -28,7 +28,8 @@
 
   <div class="col-md-3 text-center algo-inputs-col">
     <h5 class="section-header">Algo Input</h5>
-    <%= render 'algos/form_panels', service: @service %>
+    <%#= render 'algos/form_panels', service: @service %>
+    <%= render 'algos/accordion', service: @service %>
   </div>
 
   <div class="col-md-9 algo-results-col">
