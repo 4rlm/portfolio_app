@@ -1,8 +1,9 @@
 module RomanNumeral
 
   def self.run_roman_numerals(args = {})
-    arabic_nums = args.fetch(:arabic_nums, sample_arabic_nums)
-    arabic_nums.map { |num| convert_to_modern(num) }
+    arabic_nums = args.fetch(:arabic_nums, nil)
+    arabic_nums = sample_arabic_nums if !arabic_nums.present?
+    roman_nums = arabic_nums.map { |num| convert_to_modern(num) }
   end
 
 

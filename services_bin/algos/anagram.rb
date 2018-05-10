@@ -2,7 +2,8 @@ module Anagram
 
   # AlgoService.new.run_anagrams({string: 'lemon apple madam cinema restful fluster'})
   def self.run_anagrams(args = {})
-    string_block = args.fetch(:string, sample_string_block)
+    string_block = args.fetch(:original_text, nil)
+    string_block = sample_string_block if !string_block.present?
     strings = Helpers.parse_string_block(string_block)
 
     anagrams = strings.map do |string|

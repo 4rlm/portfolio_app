@@ -11,7 +11,7 @@ class AlgoService
 
   ## IMPORTANT - CONVERTS EVERY ALGO TO FRONT-END VIEWS ##
 
-  # attr_accessor :original_text, :title
+  # attr_accessor :original_text, :title, :num, :arabic_nums, :search_word, :puzzle
   attr_reader :results
   def initialize
     @results = []
@@ -57,9 +57,7 @@ class AlgoService
   # AlgoService.new.run_fib
   # def run_fib(args={})
   #   num = args.fetch(:num, generate_sm_num)
-  #   binding.pry
   #   fib = fibonacci_iter(num)
-  #   binding.pry
   #   # convert_results(fibonacci_iter(num))
   # end
 
@@ -92,7 +90,7 @@ class AlgoService
   ###########################################################
 
   # AlgoService.new.run_word_ranker
-  def run_word_ranker(args={})
+  def run_word_ranker(args = {})
     results = WordRanker.run_word_ranker(args)
     convert_results(results)
     # convert_results(WordRanker.run_word_ranker(args))
@@ -113,11 +111,10 @@ class AlgoService
   # AlgoService.new.run_roman_numerals(675)
   def run_roman_numerals(args = {})
     convert_results(RomanNumeral.run_roman_numerals(args))
-    binding.pry
   end
 
   # AlgoService.new.run_pig_latin({string: 'zebras are striped'})
-  def run_pig_latin(args={})
+  def run_pig_latin(args = {})
     convert_results(PigLatin.run_pig_latin(args))
     # pig_latin_hsh = PigLatin.run_pig_latin(args)
     # struct = OpenStruct.new(pig_latin_hsh)
@@ -125,7 +122,7 @@ class AlgoService
 
 
   # AlgoService.new.run_palindrome({string: 'lemon apple madam'})
-  def run_palindrome(args={})
+  def run_palindrome(args = {})
     convert_results(Palindrome.run_palindrome(args))
     # palindrome_hsh = Palindrome.run_palindrome(args)
     # struct = OpenStruct.new(palindrome_hsh)
@@ -133,7 +130,7 @@ class AlgoService
 
 
   # AlgoService.new.run_word_search
-  def run_word_search(args={})
+  def run_word_search(args = {})
     convert_results(WordSearch.run_word_search(args))
     # score_hsh = WordSearch.run_word_search(args)
     # struct = OpenStruct.new(score_hsh)
@@ -141,7 +138,7 @@ class AlgoService
 
 
   # AlgoService.new.run_ssn_tool
-  def run_ssn_tool(args={})
+  def run_ssn_tool(args = {})
     convert_results(SsnTool.run_ssn_tool(args))
     # ssn_hashes = SsnTool.run_ssn_tool(args)
     # structs = ssn_hashes.map { |hsh| OpenStruct.new(hsh) }
@@ -149,7 +146,7 @@ class AlgoService
 
 
   # AlgoService.new.run_house
-  def run_house(args={})
+  def run_house(args = {})
     convert_results(HERE)
     run_house = House.run_house(args)
     # structs = ssn_hashes.map { |hsh| OpenStruct.new(hsh) }

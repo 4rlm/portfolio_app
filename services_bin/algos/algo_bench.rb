@@ -5,7 +5,8 @@ module AlgoBench
 
   # bench = AlgoService.new.run_all_benchmarks
   def run_all_benchmarks(args={})
-    num = args.fetch(:num, rand(10..20))
+    num = args.fetch(:num, nil)
+    num = rand(20..30) if !num.present?
     report_hashes = []
     report_hashes << bench_fibonacci_iter(num)
     report_hashes << bench_fibonacci_recurs(num)

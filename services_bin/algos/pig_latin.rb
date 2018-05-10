@@ -2,7 +2,9 @@ module PigLatin
 
   # AlgoService.new.run_pig_latin
   def self.run_pig_latin(args={})
-    strings = args.fetch(:strings, generate_strings)
+    string_block = args.fetch(:original_text, nil)
+    string_block = generate_strings if !string_block.present?
+    strings = Helpers.parse_string_block(string_block)
 
     pig_latin_strings = strings.map do |string|
       hsh = { string: string, pig_latin: parse_string(string) }
@@ -49,7 +51,7 @@ module PigLatin
     @faker = Faker
     strings = (0..15).map { [@faker::Simpsons.quote, @faker::WorldOfWarcraft.quote, @faker::StarWars.quote ] }.flatten
     # strings = strings.sort{|a,b| a.length <=> b.length }
-    strings = strings.uniq.shuffle
+    strings = strings.uniq.shuffle.join(', ')
   end
 
 end

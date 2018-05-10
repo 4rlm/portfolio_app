@@ -64,11 +64,42 @@ class AlgosController < ApplicationController
   end
 
   ##### SERVICE RELATED METHODS BELOW #####
-
+  # attr_accessor :original_text, :title, :num, :arabic_nums, :search_word, :puzzle
 
   def run_all_benchmarks
-    @service.run_all_benchmarks
-    flash[:notice] = "Started Running Benchmarks"
+    args = {num: params[:num]}
+    @service.run_all_benchmarks(args)
+    flash[:notice] = "Benchmark Started"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+
+  def run_roman_numerals
+    args = {arabic_nums: params[:arabic_nums]}
+    @service.run_roman_numerals(args)
+    flash[:notice] = "Roman Numerals Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+
+  def run_word_ranker
+    args = {original_text: params[:original_text], title: params[:title]}
+    @service.run_word_ranker(args)
+    flash[:notice] = "Word Ranker Started!"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+
+  def run_anagrams
+    args = {original_text: params[:original_text]}
+    @service.run_anagrams(args)
+    flash[:notice] = "Anagrams Started!"
     respond_to do |format|
       format.js { render :update_service }
     end
@@ -83,60 +114,41 @@ class AlgosController < ApplicationController
     end
   end
 
-  def run_anagrams
-    @service.run_anagrams
-    flash[:notice] = "Sudoko Started!"
-    respond_to do |format|
-      format.js { render :update_service }
-    end
-  end
-
-  def run_roman_numerals
-    @service.run_roman_numerals(args)
-    flash[:notice] = "Sudoko Started!"
-    respond_to do |format|
-      format.js { render :update_service }
-    end
-  end
-
-  def run_word_ranker
-    # attr_accessor :original_text, :title
-    args = {original_text: params[:original_text], title: params[:title]}
-    @service.run_word_ranker(args)
-    
-    flash[:notice] = "Sudoko Started!"
-    respond_to do |format|
-      format.js { render :update_service }
-    end
-  end
 
   def run_pig_latin
-    @service.run_pig_latin
-    flash[:notice] = "Sudoko Started!"
+    args = {original_text: params[:original_text]}
+    @service.run_pig_latin(args)
+    flash[:notice] = "Pig Latin Started!"
     respond_to do |format|
       format.js { render :update_service }
     end
   end
+
 
   def run_palindrome
-    @service.run_palindrome
-    flash[:notice] = "Sudoko Started!"
+    args = {original_text: params[:original_text]}
+    @service.run_palindrome(args)
+    flash[:notice] = "Palindrome Started!"
     respond_to do |format|
       format.js { render :update_service }
     end
   end
+
 
   def run_word_search
-    @service.run_word_search
-    flash[:notice] = "Sudoko Started!"
+    args = {search_word: params[:search_word], puzzle: params[:puzzle]}
+    @service.run_word_search(args)
+    flash[:notice] = "Word Search Started!"
     respond_to do |format|
       format.js { render :update_service }
     end
   end
 
+
   def run_ssn_tool
-    @service.run_ssn_tool
-    flash[:notice] = "Sudoko Started!"
+    args = {original_text: params[:original_text]}
+    @service.run_ssn_tool(args)
+    flash[:notice] = "Social Security Validator Started!"
     respond_to do |format|
       format.js { render :update_service }
     end

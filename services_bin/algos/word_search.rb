@@ -2,8 +2,11 @@ module WordSearch
 
   # AlgoService.new.run_word_search
   def self.run_word_search(args = {})
-    @word = args.fetch(:word, generate_word)
-    @puzzle = args.fetch(:puzzle, generate_puzzle)
+    @word = args.fetch(:search_word, nil)
+    @word = generate_word if !@word.present?
+    @puzzle = args.fetch(:puzzle, nil)
+    @puzzle = generate_puzzle if !@puzzle.present?
+    
     @word_chars = @word.chars
     @found = []
     @first_letter = @word[0]

@@ -2,8 +2,9 @@ module SsnTool
 
   # AlgoService.new.run_ssn_tool
   def self.run_ssn_tool(args={})
-    ssn_strings = args.fetch(:ssns, generate_ssn_num_strings)
-    @hashes = ssn_strings.map do |ssn_string|
+    string_block = args.fetch(:original_text, nil)
+    string_block = generate_ssn_num_strings if !string_block.present?
+    @hashes = string_block.map do |ssn_string|
       result_hsh = find_ssn_in_string(ssn_string)
     end
   end
