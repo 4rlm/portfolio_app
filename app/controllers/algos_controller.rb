@@ -64,7 +64,17 @@ class AlgosController < ApplicationController
   end
 
   ##### SERVICE RELATED METHODS BELOW #####
-  
+
+
+  def run_all_benchmarks
+    @service.run_all_benchmarks
+    flash[:notice] = "Started Running Benchmarks"
+    respond_to do |format|
+      format.js { render :update_service }
+    end
+  end
+
+
   def run_sudoku
     @service.run_sudoku
     flash[:notice] = "Sudoko Started!"

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       match 'run_palindrome' => 'algos#run_palindrome', via: [:get, :post], as: :run_palindrome
       match 'run_word_search' => 'algos#run_word_search', via: [:get, :post], as: :run_word_search
       match 'run_ssn_tool' => 'algos#run_ssn_tool', via: [:get, :post], as: :run_ssn_tool
+      match 'run_all_benchmarks' => 'algos#run_all_benchmarks', via: [:get, :post], as: :run_all_benchmarks
       # match 'servicer' => 'algos#servicer', via: [:get, :post], as: :servicer
     end
   end

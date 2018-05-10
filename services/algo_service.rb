@@ -8,15 +8,22 @@ class AlgoService
   include AlgoBench
   include AlgoEnum
 
+
+  ## IMPORTANT - CONVERTS EVERY ALGO TO FRONT-END VIEWS ##
   attr_reader :results
   def initialize
     @results = []
   end
 
-  # attr_reader :data
-  # def initialize(data)
-  #   @data = data
-  # end
+  def convert_results(results)
+    if results.kind_of?(Array)
+      results.map { |hsh| @results << hsh }
+    elsif results.kind_of?(Hash)
+      @results << results
+    end
+
+    return @results
+  end
 
 
   # attr_reader :file_name, :file_path
@@ -35,6 +42,28 @@ class AlgoService
   # AlgoService.new.linear_search(args)
   # AlgoService.new.global_linear_search(args)
   # AlgoService.new.iterative_binary_search(args)
+
+
+  # AlgoService.new.run_fib
+  def run_fib(args={})
+    num = args.fetch(:num, generate_sm_num)
+    fib = fibonacci_iter(num)
+    # convert_results(fibonacci_iter(num))
+  end
+
+
+  # AlgoService.new.run_fib
+  # def run_fib(args={})
+  #   num = args.fetch(:num, generate_sm_num)
+  #   binding.pry
+  #   fib = fibonacci_iter(num)
+  #   binding.pry
+  #   # convert_results(fibonacci_iter(num))
+  # end
+
+  def generate_sm_num
+    num = rand(10..20)
+  end
 
   ####################### II. AlgoEnum ####################
   ########## ALGOS BELOW ARE LINKED FROM AlgoEnum ##########
@@ -59,19 +88,6 @@ class AlgoService
   ####################### III. BIG ALGOS ####################
   ##### ALGOS BELOW ARE LARGER FILES, SO START FROM HERE ####
   ###########################################################
-
-  ## IMPORTANT - CONVERTS EVERY ALGO TO FRONT-END VIEWS ##
-  def convert_results(results)
-
-    if results.kind_of?(Array)
-      results.map { |hsh| @results << hsh }
-    elsif results.kind_of?(Hash)
-      @results << results
-    end
-
-    return @results
-  end
-
 
   # AlgoService.new.run_sudoku
   def run_sudoku

@@ -1,0 +1,12 @@
+<div class="runAllBenchmarks algo-form-wrap">
+
+  <%= form_with(url: run_all_benchmarks_algos_path, class: :'algo-form') do |f| %>
+    <%= f.hidden_field :form_id, value: 'runAllBenchmarks' %>
+
+    <%= button_tag type: 'submit', class: "btn btn-primary algo-btn", id: "register-button" do %>
+        <%= icon('fas', 'play-circle', 'Run Benchmarks') %>
+    <% end %>
+
+  <% end %>
+
+</div>
