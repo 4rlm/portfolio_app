@@ -1,0 +1,59 @@
+
+<div class="panel">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-heading">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+          <!-- wk_0_1_tab -->
+          <li class="nav-item">
+            <a class="nav-link" id="wk_0_1_tab" data-toggle="tab" href="#wk_0_1" role="tab" aria-controls="home" aria-selected="true">This Week</a>
+          </li>
+
+          <!-- wk_1_2_tab -->
+          <li class="nav-item">
+            <a class="nav-link" id="wk_1_2_tab" data-toggle="tab" href="#wk_1_2" role="tab" aria-controls="home" aria-selected="true">Last Week</a>
+          </li>
+
+          <!-- wk_2_3_tab -->
+          <li class="nav-item">
+            <a class="nav-link" id="wk_2_3_tab" data-toggle="tab" href="#wk_2_3" role="tab" aria-controls="home" aria-selected="true">2 Weeks Ago</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="tab-content" id="myTabContent">
+
+        <!-- wk_0_1 -->
+        <div class="tab-pane fade show" id="wk_0_1" role="tabpanel" aria-labelledby="wk_0_1_tab">
+          <%= render 'algos/text_form' %>
+        </div>
+
+        <!-- wk_1_2 -->
+        <div class="tab-pane fade show" id="wk_1_2" role="tabpanel" aria-labelledby="wk_1_2_tab">
+          <%#= render 'tallies/wk_1_2' %>
+          <%= render 'algos/buttons_wrap', service: @service %>
+        </div>
+
+        <!-- wk_2_3 -->
+        <div class="tab-pane fade show" id="wk_2_3" role="tabpanel" aria-labelledby="wk_2_3_tab">
+          <%#= render 'tallies/wk_2_3' %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<br>

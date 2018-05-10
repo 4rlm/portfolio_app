@@ -1,0 +1,26 @@
+<div class="runAnagrams algo-form-wrap">
+
+  <%= form_with(url: run_anagrams_algos_path, class: :'algo-form') do |f| %>
+    <%= f.hidden_field :form_id, value: 'runAnagrams' %>
+
+
+    <div class="form-group">
+      <%= f.label :description, class: "control-label" %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+
+    <div class="form-group">
+      <%= f.label :email, class: "control-label" %>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+
+
+
+    <%= button_tag type: 'submit', class: "btn btn-primary", id: "register-button" do %>
+        <%= icon('fas', 'play-circle', 'Submit Text') %>
+    <% end %>
+
+  <% end %>
+
+</div>
