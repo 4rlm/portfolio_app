@@ -674,3 +674,56 @@
   font-size: 80%;
   line-height: 110%;
 }
+
+
+// ### ACCORDIAN STYLE STARTS HERE ###
+
+.acc-panel-grp {
+  // background: red;
+  min-height: 1000px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.acc-panel-div {
+  // background: yellow;
+  // margin: 2px;
+  // padding: 1px;
+  width: 100%;
+  // border: 1px solid #f7f7f7;
+  border: 1px solid #434855;
+  padding-top: 1px;
+  // border-top: none;
+  border-radius: 3px;
+}
+
+.acc-panel-heading {
+  // background: #f7f7f7;
+  background: #434855;
+  // margin: 2px;
+  padding: 2px;
+  width: 100%;
+}
+
+.acc-panel-title {
+  background: #434855;
+  // margin: 2px;
+  padding: 5px;
+  width: 100%;
+}
+
+.acc-panel-collapse div {
+  // background: #434855;
+  // margin: 2px;
+  padding: 5px;
+  width: 100%;
+  min-height: 300px;
+}
+
+.acc-panel-body div {
+  // background: #434855;
+  // margin: 2px;
+  padding: 5px;
+  width: 100%;
+}
