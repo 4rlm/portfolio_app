@@ -1,0 +1,19 @@
+<div id=<% form_klass %> class="text-area-form-wrap">
+
+  <%= form_with(url: action_path_var, class: :'text-area-form') do |f| %>
+
+    <div class="form-group">
+      <%= f.text_area :original_text, placeholder: "Paste a couple paragraphs...", size: "30x10", class: "form-control text-area" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :title, placeholder: "Enter a topic or title...", class: "form-control text-field" %>
+    </div>
+
+    <%= button_tag type: 'submit', class: "btn btn-primary algo-text-btn", id: "register-button" do %>
+        <%= icon('fas', 'play-circle', submit_btn_var) %>
+    <% end %>
+
+  <% end %>
+
+</div>

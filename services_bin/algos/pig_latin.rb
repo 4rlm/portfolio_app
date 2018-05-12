@@ -4,9 +4,9 @@ module PigLatin
   def self.run_pig_latin(args={})
     string_block = args.fetch(:original_text, nil)
     string_block = generate_strings if !string_block.present?
-    strings = Helpers.parse_string_block(string_block)
+    parsed_strings = HelperAlgoServ.parse_string_block(string_block)
 
-    pig_latin_strings = strings.map do |string|
+    pig_latin_strings = parsed_strings.map do |string|
       hsh = { string: string, pig_latin: parse_string(string) }
     end
 

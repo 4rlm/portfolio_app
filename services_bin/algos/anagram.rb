@@ -4,9 +4,9 @@ module Anagram
   def self.run_anagrams(args = {})
     string_block = args.fetch(:original_text, nil)
     string_block = sample_string_block if !string_block.present?
-    strings = Helpers.parse_string_block(string_block)
+    parsed_strings = HelperAlgoServ.parse_string_block(string_block)
 
-    anagrams = strings.map do |string|
+    anagrams = parsed_strings.map do |string|
       { input_string: string, anagrams: find_anagrams(string) }
     end
 

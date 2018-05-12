@@ -4,9 +4,9 @@ module Palindrome
   def self.run_palindrome(args = {})
     string_block = args.fetch(:original_text, nil)
     string_block = sample_string_block if !string_block.present?
-    strings = Helpers.parse_string_block(string_block)
+    parsed_strings = HelperAlgoServ.parse_string_block(string_block)
 
-    palindromes = strings.map do |string|
+    palindromes = parsed_strings.map do |string|
       { input_string: string, palindromes: find_palindromes(string) }
     end
 

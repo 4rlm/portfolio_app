@@ -77,7 +77,7 @@ class AlgosController < ApplicationController
 
 
   def run_roman_numerals
-    args = {arabic_nums: params[:arabic_nums]}
+    args = {arabic_nums: params[:input]}
     @service.run_roman_numerals(args)
     flash[:notice] = "Roman Numerals Started!"
     respond_to do |format|

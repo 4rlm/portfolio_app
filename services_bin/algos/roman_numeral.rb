@@ -2,7 +2,16 @@ module RomanNumeral
 
   def self.run_roman_numerals(args = {})
     arabic_nums = args.fetch(:arabic_nums, nil)
-    arabic_nums = sample_arabic_nums if !arabic_nums.present?
+
+    if !arabic_nums.present?
+      arabic_nums = sample_arabic_nums
+    else
+      if arabic_nums.is_a?(::String)
+        arabic_nums = arabic_nums.scan(/\d+/)
+        arabic_nums.map! { |num| num.to_i }
+      end
+    end
+
     roman_nums = arabic_nums.map { |num| convert_to_modern(num) }
   end
 
